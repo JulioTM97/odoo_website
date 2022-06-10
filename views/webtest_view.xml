@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="webtest_action" model="ir.actions.act_window">
+        <field name="name">Website Test</field>
+        <field name="res_model">webtest</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="webtest_menu_root" name="Website Test" action="webtest_action">
+        <menuitem id="webtest_first_level_menu" name="Go to web">
+        </menuitem>
+    </menuitem>
+
+    <record id="webtest_view_tree" model="ir.ui.view">
+        <field name="name">webtest.tree</field>
+        <field name="model">webtest</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>
