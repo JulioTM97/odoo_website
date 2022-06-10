@@ -5,9 +5,13 @@
             <t t-set="title">Elementos</t>
             <div class="oe_structure">
                 <div class="container">
+                <!-- Yelementor es el conjunto de registros que fueron pasados desde el controlador 
+                que llama a este template -->
                     <t t-foreach="Yelementor" t-as="elemento">
                         <p class="text-success">
+                        <!-- slug(elemento) me devuelve el id de ese registro -->
                         <a t-attf-href="/website_test/{{ slug(elemento) }}">
+                        <!-- con t-esc puedo mostrar el valor de el campo indicado -->
                         <t t-esc="elemento.name"/></a>
                         </p>
                     </t>
@@ -21,11 +25,13 @@
             <t t-set="title">Vaquea e'te titulo papa!</t>
             <div class="oe_structure">
                 <div class="container">
+                    <!-- 'asunto' es el parametro pasado por el controlador -->
                     <h1 class="text-primary"><t t-esc="asunto.name"/></h1>
                     <p class="text-success"><strong>ID: </strong><t t-esc="asunto.id"/></p>
                     <p class="text-info"><strong>Description: </strong><t t-esc="asunto.description"/></p>
                     <p t-field="asunto.comentario"/>
                     <a t-attf-href="/website_test">Dale pa' tra'</a>
+                    <!-- Los datos del formulario llegan a la direccion (controlador) indicada como un diccionario -->
                     <form id="commentsss" t-attf-action="/blogpost/comment" method="GET">
                         <input name="name" type="text"/>
                         <input name="description" type="text"/>
@@ -33,6 +39,7 @@
                             <button type="submit" class="btn btn-primary mt8">Post</button>
                         </div>   
                     </form>
+
                 </div>
             </div>
         </t>

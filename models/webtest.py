@@ -11,7 +11,3 @@ class website_test(models.Model):
     value = fields.Integer()
     description = fields.Text()
     comentario = fields.Html()
-
-    def action_create_record(self,valores):
-        raise UserError (str(type(valores))+"\n"+str(valores))
-
